@@ -1,0 +1,47 @@
+header{
+    background-color: bisque;
+    width: 100%;
+    
+}
+h1{
+    text-align: center;
+    color: cadetblue;
+    text-decoration: underline;
+}
+
+footer{
+    background-color: bisque;
+    width: 100%;
+    
+}
+
+nav{
+    background-color: bisque;
+    width: 100%;
+    
+}
+
+main{
+    background-color: bisque;
+    width: 100%;
+    
+}
+body{
+    background-color: azure;
+}
+
+p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.img{
+    margin: auto;
+    display: block;
+}
+
+.p1{
+    font-size: 25px;
+    color: brown;
+    text-decoration: underline;
+}
