@@ -3,9 +3,152 @@ header{
     width: 100%;
     
 }
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login {
+    background-color: cadetblue;
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #5f9ea0;
+}
+
+.btn-register {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-register:hover {
+    background-color: #45a049;
+}
+
+.btn-back {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #da190b;
+}
+
+.btn-submit {
+    background-color: cadetblue;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.btn-submit:hover {
+    background-color: #5f9ea0;
+}
+
 h1{
     text-align: center;
     color: cadetblue;
+    text-decoration: underline;
+    margin: 0;
+}
+
+/* Styles pour les pages d'authentification */
+.auth-main {
+    background-color: bisque;
+    width: 100%;
+    padding: 40px 20px;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.auth-container h2 {
+    text-align: center;
+    color: cadetblue;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: cadetblue;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.auth-link a {
+    color: cadetblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
     text-decoration: underline;
 }
 
@@ -28,6 +171,8 @@ main{
 }
 body{
     background-color: azure;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 p{
@@ -44,4 +189,26 @@ p{
     font-size: 25px;
     color: brown;
     text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .auth-container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .auth-buttons {
+        justify-content: center;
+    }
 }
