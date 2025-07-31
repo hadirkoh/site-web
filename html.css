@@ -1,47 +1,256 @@
-header{
-    background-color: bisque;
-    width: 100%;
-    
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1{
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+}
+
+/* Arrière-plan avec overlay animé */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+    animation: backgroundShift 8s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundShift {
+    0% { transform: translateX(-10px) translateY(-10px); }
+    100% { transform: translateX(10px) translateY(10px); }
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+/* Section de bienvenue */
+.welcome-section {
     text-align: center;
-    color: cadetblue;
-    text-decoration: underline;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
 }
 
-footer{
-    background-color: bisque;
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% { text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+    100% { text-shadow: 0 4px 30px rgba(255, 255, 255, 0.2); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* Container des boutons */
+.buttons-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Styles des boutons */
+.btn {
+    position: relative;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 180px;
+    justify-content: center;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
 }
 
-nav{
-    background-color: bisque;
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Bouton Login */
+.login-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(238, 90, 36, 0.6);
+}
+
+.login-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Bouton Sign Up */
+.signup-btn {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    color: white;
+    box-shadow: 0 8px 25px rgba(68, 160, 141, 0.4);
+}
+
+.signup-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(68, 160, 141, 0.6);
+}
+
+.signup-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Icônes des boutons */
+.btn-icon {
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+    transform: translateX(3px);
+}
+
+/* Éléments décoratifs */
+.decorative-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    right: 15%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 25%;
+    animation: float 10s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Animations d'entrée */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
     
-}
-
-main{
-    background-color: bisque;
-    width: 100%;
+    .buttons-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        padding: 0 2rem;
+    }
     
-}
-body{
-    background-color: azure;
-}
-
-p{
-    font-size: 20px;
-    text-align: center;
-}
-
-.img{
-    margin: auto;
-    display: block;
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .circle-1, .circle-2, .circle-3 {
+        display: none;
+    }
 }
 
-.p1{
-    font-size: 25px;
-    color: brown;
-    text-decoration: underline;
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .welcome-section {
+        margin-bottom: 2rem;
+    }
 }
