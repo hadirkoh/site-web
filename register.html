@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="html.css" rel="stylesheet">
+    <title>S'inscrire - Open Source Platform</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>S'inscrire</h1>
+            <div class="auth-buttons">
+                <button class="btn btn-back" onclick="window.location.href='index.html'">Retour</button>
+            </div>
+        </div>
+    </header>
+    <hr>
+    
+    <main class="auth-main">
+        <div class="auth-container">
+            <h2>Créer un compte</h2>
+            <form class="auth-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="entreprise">Nom de l'entreprise :</label>
+                    <input type="text" id="entreprise" name="entreprise" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tva">Numéro de TVA :</label>
+                    <input type="text" id="tva" name="tva" placeholder="Ex: BE0123456789" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="Ex: +33 1 23 45 67 89" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe :</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-submit">Créer le compte</button>
+            </form>
+            
+            <p class="auth-link">
+                Déjà un compte ? 
+                <a href="login.html">Se connecter</a>
+            </p>
+        </div>
+    </main>
+    
+    <hr>
+    <footer>
+        <p class="p1">ayari hadir 1ére IAG</p>
+    </footer>
+</body>
+</html>
